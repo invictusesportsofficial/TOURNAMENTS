@@ -1,13 +1,10 @@
-// Placeholder JS (intentionally minimal)
-console.log("Fullscreen iframe loaded");
+const iframe = document.getElementById("embedFrame");
 
-document.addEventListener("DOMContentLoaded", () => {
-  const iframe = document.getElementById("embedFrame");
+let escaped = false;
 
-  if (!iframe) return;
-
-  // Safety fallback if iframe fails
-  iframe.onerror = () => {
-    window.location.href = iframe.src;
-  };
+// If iframe loses focus during login, redirect
+window.addEventListener("blur", () => {
+  if (escaped) return;
+  escaped = true;
+  window.location.href = iframe.src;
 });
