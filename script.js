@@ -1,12 +1,13 @@
-// JS kept minimal on purpose
-// This file exists mainly to satisfy hosting / structure requirements
+// Placeholder JS (intentionally minimal)
+console.log("Fullscreen iframe loaded");
 
-console.log("Embed loaded");
-
-// Future-safe hook
 document.addEventListener("DOMContentLoaded", () => {
-  const frame = document.getElementById("embedFrame");
+  const iframe = document.getElementById("embedFrame");
 
-  // Placeholder for future logic
-  if (!frame) return;
+  if (!iframe) return;
+
+  // Safety fallback if iframe fails
+  iframe.onerror = () => {
+    window.location.href = iframe.src;
+  };
 });
