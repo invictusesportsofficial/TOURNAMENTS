@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Embedded View</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>Fullscreen Embed</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="app">
-    <iframe
-      src="https://hotpic.cc/album/grqaVnKXzPqP"
-      allowfullscreen
-      loading="lazy">
-    </iframe>
-  </div>
+  <!-- Navbar (optional, remove if not needed) -->
+  <nav class="navbar">
+    <div class="logo">INVICTUS</div>
+  </nav>
 
+  <!-- Fullscreen container -->
+  <main class="app">
+    <iframe
+      id="embedFrame"
+      src="https://primeclash.vercel.app/"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer">
+    </iframe>
+  </main>
+
+  <!-- JS -->
   <script src="script.js"></script>
 </body>
 </html>
